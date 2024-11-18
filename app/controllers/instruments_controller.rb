@@ -1,5 +1,6 @@
 class InstrumentsController < ApplicationController
   def index
+    @instruments = Instrument.all
   end
 
   def show
@@ -11,13 +12,12 @@ class InstrumentsController < ApplicationController
 
   def create
     @instrument = Instrument.new(instrument_params)
-    @instrument = current_user
+    @instrument.user = current_user
 
     if @instrument.save
-    # No need for app/views/instruments/create.html.erb
+      # No need for app/views/instruments/create.html.erb
       redirect_to instruments_path
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end
