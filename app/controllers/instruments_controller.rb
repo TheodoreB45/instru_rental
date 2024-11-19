@@ -4,6 +4,7 @@ class InstrumentsController < ApplicationController
   end
 
   def show
+    @instrument = Instrument.find(params[:id]) #only this one has view
   end
 
   def new
@@ -20,6 +21,15 @@ class InstrumentsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @instrument = Instrument.find(params[:id]) #only this one has view
+  end
+
+  def update
+    @instrument = Instrument.find(params[:id])
+    @instrument.update(instrument_params)
   end
 
   def delete
