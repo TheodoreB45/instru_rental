@@ -1,7 +1,21 @@
 <h1>Instrument page</h1>
+<<<<<<< Updated upstream
 <ul>
   <% @instruments.each do |instrument| %>
     <li><%= instrument.title %></li>
   <% end %>
 </ul>
 <%= link_to "Add New instrument", new_instrument_path  %>
+=======
+<div>
+  <ul>
+    <% @instruments.each do |instrument| %>
+      <li><%= link_to instrument.title, instrument_path(instrument) %>
+<%= link_to "Delete", instrument_path(instrument), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?" } %></li>
+    <% end %>
+  </ul>
+  <%= link_to "Add New instrument", new_instrument_path  %>
+</div>
+>>>>>>> Stashed changes
