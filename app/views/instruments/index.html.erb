@@ -1,7 +1,7 @@
 <h1>Instrument page</h1>
-<%= @instruments.inspect  %>
 <ul>
   <% @instruments.each do |instrument| %>
     <li><%= instrument.title %></li>
   <% end %>
 </ul>
+<%= link_to "Add New instrument", new_instrument_path  %>

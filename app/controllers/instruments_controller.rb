@@ -22,6 +22,15 @@ class InstrumentsController < ApplicationController
     end
   end
 
+  def edit
+    @instrument = Instrument.find(params[:id]) #only this one has view
+  end
+
+  def update
+    @instrument = Instrument.find(params[:id])
+    @instrument.update(instrument_params)
+  end
+
   def delete
     @instrument = Instrument.destroy
   end
