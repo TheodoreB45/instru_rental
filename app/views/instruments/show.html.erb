@@ -7,5 +7,15 @@
     <li><%= @instrument.description %></li>
     <h4>Condition:</h4>
     <li><%= @instrument.condition %></li>
+    
   </ul>
+
 </div>
+
+<%= simple_form_for([@instrument, @booking]) do |f| %>
+  <%= f.input :booking_period %>
+  <%= f.input :price %>
+  <%= f.input :rating %>
+  <%= f.association :instrument %>
+  <%= f.submit %>
+<% end %>

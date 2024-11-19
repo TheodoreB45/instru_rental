@@ -1,6 +1,11 @@
 <h1>Your bookings:</h1>
 <ul>
   <% @bookings.each do | booking | %>
-    <li><%= booking.name %></li>
+    <li><%= booking.instrument.title %></li>
   <% end %>
+
+  <%# <%= link_to "Delete", booking_path(@booking), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?" } %>
+  <% end %> %>
 </ul>

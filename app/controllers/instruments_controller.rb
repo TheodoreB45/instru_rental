@@ -5,6 +5,8 @@ class InstrumentsController < ApplicationController
 
   def show
     @instrument = Instrument.find(params[:id]) #only this one has view
+    @booking.new
+
   end
 
   def new
