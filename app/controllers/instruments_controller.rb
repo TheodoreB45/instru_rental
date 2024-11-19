@@ -34,8 +34,11 @@ class InstrumentsController < ApplicationController
     @instrument.update(instrument_params)
   end
 
-  def delete
-    @instrument = Instrument.destroy
+  def destroy
+    @instrument = Instrument.find(params[:id])
+    @instrument.destroy
+    redirect_to instruments_path, status: :see_other
+
   end
 
   private
