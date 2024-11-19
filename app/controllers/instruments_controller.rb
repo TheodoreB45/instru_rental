@@ -4,6 +4,7 @@ class InstrumentsController < ApplicationController
   end
 
   def show
+    @instrument = Instrument.find(params[:id]) #only this one has view
   end
 
   def new
