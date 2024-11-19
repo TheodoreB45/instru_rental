@@ -22,6 +22,10 @@ class InstrumentsController < ApplicationController
     end
   end
 
+  def delete
+    @instrument = Instrument.destroy
+  end
+
   private
 
   def instrument_params
