@@ -7,23 +7,26 @@ class BookingsController < ApplicationController
   def create
     @instrument = Instrument.find(params[:instrument_id])
     @booking = Booking.new(booking_params)
+    @booking.instrument = @instrument
+    @booking.user = current_user
     if @booking.save
+      # after a booking is create it should show up on the user profile
       redirect_to instrument_path(@instrument)
     else
-      render "instruemnts/show", status: :unprocessable_entity
+      render "instruments/show", status: :unprocessable_entity
     end
   end
 
-  # def destroy
-  #   @booking = Booking.find(params[:id])
-  #   @instrument = @booking.instrument
-  #   @booking.destroy
-  #   redirect_to instrument_path(@instrument), status: :see_other
-  # end
+  def destroy
+    @booking = Booking.find(params[:id])
+    @instrument = @booking.instrument
+    @booking.destroy
+    redirect_to instrument_path(@instrument), status: :see_other
+  end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:price, :instrument_id, :rating, :booking_period)
+    params.require(:booking).permit(:instrument_id, :booking_period, :start_date, :end_date)
   end
 end
