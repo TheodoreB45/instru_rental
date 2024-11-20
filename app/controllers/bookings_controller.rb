@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       # after a booking is create it should show up on the user profile
-      redirect_to profile_path(@profile)
+      redirect_to profile_path(@instrument)
     else
       render "instruments/show", status: :unprocessable_entity
     end
@@ -19,9 +19,8 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    @instrument = @booking.instrument
     @booking.destroy
-    redirect_to instrument_path(@instrument), status: :see_other
+    redirect_to profile_path, status: :see_other
   end
 
   private
