@@ -21,7 +21,6 @@ class InstrumentsController < ApplicationController
       # No need for app/views/instruments/create.html.erb
       redirect_to instruments_path
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end
