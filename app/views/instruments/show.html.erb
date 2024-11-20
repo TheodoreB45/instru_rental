@@ -14,7 +14,7 @@
 
 </div>
 
-<%= simple_form_for([@instrument, @booking]) do |f| %>
+<%= simple_form_for [@instrument, @booking] do |f| %>
   <%= f.input :start_date,
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
