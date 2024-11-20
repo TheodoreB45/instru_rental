@@ -14,5 +14,46 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
+
+        <%# <header class="header">
+        <div class="logo">InstruRental</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button class="search-button">🔍</button>
+        </div>
+        <div class="menu">
+            <button>☰</button>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <button class="nav-item">🎸 Guitar</button>
+        <button class="nav-item">🎹 Keys</button>
+        <button class="nav-item">🥁 Drums</button>
+        <button class="nav-item">?</button>
+        <button class="nav-item">Accessories</button>
+        <button class="nav-item">More</button>
+        <button class="filter-button">⚙️</button>
+    </nav>
+
+    <main class="product-grid">
+        <!-- Repeat this block for each product -->
+        <div class="product-card">
+            <div class="product-image"></div>
+            <div class="product-info">
+                <h3>Title</h3>
+                <p>Day-day Month</p>
+                <p>€Price</p>
+            </div>
+            <div class="badge">New</div>
+        </div>
+        <!-- End of product card -->
+    </main>
+
+    <footer class="footer">
+        <button>Instagram</button>
+        <button>Facebook</button>
+        <button>Twitter</button>
+    </footer> %>
   </body>
 </html>
