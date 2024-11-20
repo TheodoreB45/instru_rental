@@ -1,16 +1,18 @@
 <h1 class="m-4 text-center">Instrument listings page</h1>
-<div class="m-4 card" style="width: 18rem;">
-  <ul class="m-4 list-unstyled">
-    <% @instruments.each do |instrument| %>
+<div class="d-flex">
+  <% @instruments.each do |instrument| %>
+    <div class="m-4 card" style="width: 18rem;">
       <div class="card-body">
-        <li><%= link_to instrument.title, instrument_path(instrument), class: "card-title" %>
+        <p><%= link_to instrument.title, instrument_path(instrument), class: "card-title" %></p>
         <p class="card-text"><%= instrument.description%></p>
-        <li><%= link_to "Delete", instrument_path(instrument), class: "btn btn-primary", data: {
+        <p><%= link_to "Delete", instrument_path(instrument), class: "btn btn-primary", data: {
           turbo_method: :delete,
           turbo_confirm: "Are you sure?" } %></li>
       </div>
-    <% end %>
-  </ul>
+    </div>
+  <% end %>
 </div>
+
+
 
 <%= link_to "Add New instrument", new_instrument_path, class: "m-4 btn btn-secondary" %>
