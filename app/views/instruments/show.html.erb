@@ -7,5 +7,20 @@
     <li><%= @instrument.description %></li>
     <h4>Condition:</h4>
     <li><%= @instrument.condition %></li>
+    <%# <% if @instrument.booking? %>
+
+
   </ul>
+
 </div>
+
+<%= simple_form_for([@instrument, @booking]) do |f| %>
+  <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.submit %>
+  <%= link_to "browse instruments", instruments_path %>
+<% end %>

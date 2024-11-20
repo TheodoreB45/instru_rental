@@ -5,6 +5,7 @@ class InstrumentsController < ApplicationController
 
   def show
     @instrument = Instrument.find(params[:id]) #only this one has view
+    @booking = Booking.new
   end
 
   def new
@@ -12,6 +13,7 @@ class InstrumentsController < ApplicationController
   end
 
   def create
+
     @instrument = Instrument.new(instrument_params)
     @instrument.user = current_user
 
@@ -19,6 +21,7 @@ class InstrumentsController < ApplicationController
       # No need for app/views/instruments/create.html.erb
       redirect_to instruments_path
     else
+      raise
       render :new, status: :unprocessable_entity
     end
   end
