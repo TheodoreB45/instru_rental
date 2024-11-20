@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
-  def home
+  def profile
+    @instruments = Instrument.where(user: current_user)
   end
 end
