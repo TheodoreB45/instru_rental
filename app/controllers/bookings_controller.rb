@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       # after a booking is create it should show up on the user profile
-      redirect_to instrument_path(@instrument)
+      redirect_to profile_path(@profile)
     else
       render "instruments/show", status: :unprocessable_entity
     end
