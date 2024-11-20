@@ -5,14 +5,7 @@
       <div class="card-body">
         <p><%= link_to instrument.title, instrument_path(instrument), class: "card-title" %></p>
         <p class="card-text"><%= instrument.description%></p>
-        <p><%= link_to "Delete", instrument_path(instrument), class: "btn btn-primary", data: {
-          turbo_method: :delete,
-          turbo_confirm: "Are you sure?" } %></li>
       </div>
     </div>
   <% end %>
 </div>
-
-
-
-<%= link_to "Add New instrument", new_instrument_path, class: "m-4 btn btn-secondary" %>
