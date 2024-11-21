@@ -1,5 +1,17 @@
 
 <h1 class="text-center">Profile</h1>
+  <div>
+    <h3>Instruments:</h3>
+    <ul class="list-unstyled">
+      <% @instruments.each do |instrument| %>
+        <li><%= link_to instrument.title, instrument_path(instrument) %>
+        <%= link_to "Delete", instrument_path(instrument), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?" } %></li>
+      <% end %>
+    </ul>
+  <div>
+
 <div class="d-flex justify-content-between">
   <div>
     <h3>Your bookings:</h3>
@@ -14,16 +26,5 @@
       <% end %>
     </ul>
   <div>
-  <div>
-    <h3>Instruments:</h3>
-    <ul class="list-unstyled">
-      <% @instruments.each do |instrument| %>
-        <li><%= link_to instrument.title, instrument_path(instrument) %>
-        <%= link_to "Delete", profile_path(instrument), data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?" } %></li>
-      <% end %>
-    </ul>
-    <%= link_to "List New instrument", new_instrument_path  %>
-  <div>
 </div>
+  <%= link_to "List New instrument", new_instrument_path  %>
