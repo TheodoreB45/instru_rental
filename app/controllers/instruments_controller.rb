@@ -1,6 +1,9 @@
 class InstrumentsController < ApplicationController
   def index
     @instruments = Instrument.all
+    if params[:query].present?
+      @instruments = @instruments.where("title ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
