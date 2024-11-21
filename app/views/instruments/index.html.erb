@@ -1,11 +1,35 @@
-<h1 class="m-4 text-center">Instrument listings page</h1>
-<div class="d-flex">
+<%# <h1 class="m-4 text-center">Instrument listings page</h1> %>
+<%# <div class="d-flex"> %>
+  <%# @instruments.each do |instrument| %>
+    <%# <div class="m-4 card" style="width: 18rem;"> %>
+      <%# <div class="card-body"> %>
+        <%# <p> %>
+        <%#= link_to instrument.title, instrument_path(instrument), class: "card-title" %>
+        <%# </p> %>
+        <%# <p class="card-text"> %>
+        <%#= instrument.description%>
+        <%# </p> %>
+      <%# </div> %>
+    <%# </div> %>
+  <%# end %>
+<%# </div> %>
+
+<main class="product-grid">
   <% @instruments.each do |instrument| %>
-    <div class="m-4 card" style="width: 18rem;">
-      <div class="card-body">
-        <p><%= link_to instrument.title, instrument_path(instrument), class: "card-title" %></p>
-        <p class="card-text"><%= instrument.description%></p>
+    <div class="product-card">
+      <div class="product-image">
+        <% if instrument.image.present? %>
+          <%= image_tag instrument.image.url, alt: instrument.name %>
+        <% else %>
+          <div class="placeholder-image"></div>
+        <% end %>
       </div>
+      <div class="product-info">
+        <h3><%= instrument.name %></h3>
+        <p><%= instrument.availability %></p>
+        <p>€<%= instrument.price %></p>
+      </div>
+      <div class="badge">New</div>
     </div>
   <% end %>
-</div>
+</main>
