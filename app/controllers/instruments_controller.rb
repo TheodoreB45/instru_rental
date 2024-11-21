@@ -5,7 +5,14 @@ class InstrumentsController < ApplicationController
 
   def show
     @instrument = Instrument.find(params[:id]) #only this one has view
+    @instruments = Instrument.all
     @booking = Booking.new
+    @markers = @instruments.geocoded.map do |instrument|
+      {
+        lat: instrument.latitude,
+        lng: instrument.longitude
+      }
+    end
   end
 
   def new
@@ -43,6 +50,6 @@ class InstrumentsController < ApplicationController
   private
 
   def instrument_params
-    params.require(:instrument).permit(:title, :description, :condition, :available_from, :available_until, :price_per_day)
+    params.require(:instrument).permit(:title, :description, :condition, :available_from, :available_until, :price_per_day, :address)
   end
 end
