@@ -19,13 +19,3 @@
     </div>
   <% end %>
 </div>
-<div class="d-flex">
-  <% @instruments.each do |instrument| %>
-    <div class="m-4 card" style="width: 18rem;">
-      <div class="card-body">
-        <p><%= link_to instrument.title, instrument_path(instrument), class: "card-title" %></p>
-        <p class="card-text"><%= instrument.description%></p>
-      </div>
-    </div>
-  <% end %>
-</div>

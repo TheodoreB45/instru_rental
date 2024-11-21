@@ -44,6 +44,7 @@ puts "Creating Instruments..."
     title: Faker::Music.instrument,
     condition: conditions.sample,
     description: descriptions.sample,
+    address: Faker::Address.street_address + ", London, " + Faker::Address.postcode,
     user: user1
   )
 
