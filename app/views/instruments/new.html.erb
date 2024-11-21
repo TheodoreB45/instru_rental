@@ -3,5 +3,13 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :condition %>
+  <%= f.input :address %>
+  <%= f.input :price_per_day %>
+    <%= f.input :available_from,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :available_until,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
   <%= f.submit %>
 <% end %>

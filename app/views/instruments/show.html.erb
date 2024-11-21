@@ -7,20 +7,28 @@
     <li><%= @instrument.description %></li>
     <h4>Condition:</h4>
     <li><%= @instrument.condition %></li>
-    <%# <% if @instrument.booking? %>
-
-
+    <h4>Price per day:</h4>
+    <li><%= @instrument.price_per_day%></li>
+    <h4>location:</h4>
+    <div>
+    <li><%= @instrument.address %></li>
+      <p>available_from:</p>
+      <li><%= @instrument.available_from %></li>
+      <p>available_until</p>
+      <li><%= @instrument.available_until %></li>
+    </div>
   </ul>
-
 </div>
 
-<%= simple_form_for [@instrument, @booking] do |f| %>
-  <%= f.input :start_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :end_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.submit %>
-  <%#= link_to "browse instruments", instruments_path %>
-<% end %>
+<div>
+  <h5>Book this instrument:</h5>
+    <%= simple_form_for [@instrument, @booking] do |f| %>
+      <%= f.input :start_date,
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :end_date,
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+      <%= f.submit %>
+    <% end %>
+</div>

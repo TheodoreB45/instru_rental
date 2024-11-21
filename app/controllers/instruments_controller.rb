@@ -40,13 +40,12 @@ class InstrumentsController < ApplicationController
   def destroy
     @instrument = Instrument.find(params[:id])
     @instrument.destroy
-    redirect_to instruments_path, status: :see_other
-
+    redirect_to profile_path, status: :see_other
   end
 
   private
 
   def instrument_params
-    params.require(:instrument).permit(:title, :description, :condition)
+    params.require(:instrument).permit(:title, :description, :condition, :available_from, :available_until, :price_per_day)
   end
 end
