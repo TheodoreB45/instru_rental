@@ -1,9 +1,9 @@
 <div class="grid-container">
   <% @instruments.each do |instrument| %>
     <div class="card grid-item">
+      <%= cl_image_tag instrument.photo.key if instrument.photo.attached? %>
       <div class="card-body">
         <h5><%= link_to instrument.title, instrument_path(instrument), class: "card-title" %></h5>
-        <%= cl_image_tag instrument.photo.key if instrument.photo.attached? %>
         <p class="card-text"><%= instrument.condition%></p>
         <p class="card-text">£<%= instrument.price_per_day%>.00</p>
         <p class="card-text"><%= instrument.address%></p>
