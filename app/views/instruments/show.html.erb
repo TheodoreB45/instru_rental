@@ -25,6 +25,7 @@
           <%= f.submit class:"submit-btn" %>
         <% end %>
     </div>
+  <%= cl_image_tag @instrument.photo.key if @instrument.photo.attached? %>
 
   <div class="card border-0" style="width: 50%;">
     <h4>Location:</h4>
