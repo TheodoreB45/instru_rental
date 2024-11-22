@@ -4,6 +4,7 @@ class InstrumentsController < ApplicationController
     if params[:query].present?
       @instruments = @instruments.where("title ILIKE ?", "%#{params[:query]}%")
     end
+    @instruments.sort_by { |i| i.created_at }
   end
 
   def show
