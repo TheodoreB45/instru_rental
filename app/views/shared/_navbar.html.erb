@@ -10,7 +10,7 @@
     <div class="search-bar-container">
       <%= form_with url: instruments_path, method: :get, class: "d-flex search-bar" do %>
         <%= text_field_tag :query, params[:query], class: "search-input", placeholder: "Search an instrument..." %>
-        <%= submit_tag "Search", class: "list-button" %>
+        <%= submit_tag "Search", class: "search-button" %>
       <% end %>
       <%= link_to "List an instrument", "/listings", class: "list-button" %>
     </div>

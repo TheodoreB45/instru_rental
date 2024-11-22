@@ -89,13 +89,6 @@
   background-color: transparent;
   padding: 10px 0;
 }
-.search-button {
-  background-color: transparent;
-  border: none;
-  color: #555;
-  font-size: 18px;
-  cursor: pointer;
-}
 .list-button {
   background-color: #FF9F1C;
   text-decoration: none;
@@ -110,5 +103,21 @@
 }
 .list-button:hover {
   background-color: #D7AB6F;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.search-button {
+  background-color: #BCB8B1;
+  text-decoration: none;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.search-button:hover {
+  background-color: #8A817C;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }

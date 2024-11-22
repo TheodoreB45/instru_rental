@@ -1,7 +1,7 @@
 <div class="container mx-2">
   <h1>Description</h1>
     <div class="card border-0" style="width: 50%;">
-      <ul>
+      <ul class="list-unstyled">
         <h4>Title:</h4>
         <li><%= @instrument.title %></li>
         <h4>Description:</h4>
@@ -27,15 +27,14 @@
     </div>
 
   <div class="card border-0" style="width: 50%;">
-    <h4>Location:</h4>
-      <div>
-        <li><%= @instrument.address %></li>
-          <p>available_from:</p>
-          <li><%= @instrument.available_from %></li>
-          <p>available_until</p>
-          <li><%= @instrument.available_until %></li>
-        </ul>
-      </div>
+    <h4 class="pt-4">Location:</h4>
+    <div>
+      <ul class="list-unstyled">
+        <li class="py-2"><b><%= @instrument.address %></b></li>
+        <p class="py-2">Available_from: <%= @instrument.available_from %></p>
+        <p>Available_until: <%= @instrument.available_until %></p>
+      </ul>
+    </div>
   </div>
 
   <div style="width: 100%; height: 600px;"
