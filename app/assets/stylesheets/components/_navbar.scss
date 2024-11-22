@@ -8,7 +8,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 30px;
 }
 
 .navbar {
@@ -26,13 +26,13 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ff8c00;
-  font-family: "Pacifico" ;
+  color: #FF9F1C;
+  font-family: "Pacifico";
 }
 
 .logo-icon {
-  font-size: 1.5rem;
   margin-right: 5px;
+
 }
 
 .navbar-search {
@@ -42,7 +42,7 @@
 }
 
 .search-input {
-  width: 60%;
+  width: 70%;
   padding: 10px 15px;
   border: 1px solid #ccc;
   border-radius: 20px;
@@ -53,7 +53,7 @@
 }
 
 .search-input:focus {
-  border-color: #ff8c00;
+  border-color: #FF9F1C;
 }
 
 .search-button {
@@ -68,25 +68,33 @@
   color: #333;
 }
 
-.navbar-icons {
-  display: flex;
-  gap: 15px;
+.pill {
+  width: 100px;
+  height: 40px;
+  background-color: #D7AB6F;
+  border-radius: 24px;
 }
 
-.icon-button {
-  background-color: #d4a267;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 15px;
-  font-size: 1.2rem;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.fa-home {
+  color: white;
   transition: background-color 0.3s ease;
+  position: absolute;
+  top: 12px;
+  left: 20px;
 }
 
-.icon-button:hover {
-  background-color: #b48d4a;
+.fa-home:hover {
+  color: #888888;
+}
+
+.fa-user {
+  color: white;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 12px;
+  left: 60px;
+}
+
+.fa-user:hover {
+  color: #888888;
 }
