@@ -1,0 +1,11 @@
+<div>
+    <h3>Listings:</h3>
+    <ul class="list-unstyled">
+      <% @instruments.each do |instrument| %>
+        <li><%= link_to instrument.title, instrument_path(instrument) %>
+        <%= link_to "Delete", instrument_path(instrument), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?" } %></li>
+      <% end %>
+    </ul>
+  <div>

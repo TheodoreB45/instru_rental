@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get "/profile", to: "users#profile"
 
+  get "/listings", to: "users#listings"
+
+   get "/bookings", to: "users#bookings"
+
   # Defines the root path route ("/")
   # root "posts#index"
   resources :instruments, except: [:edit, :update] do

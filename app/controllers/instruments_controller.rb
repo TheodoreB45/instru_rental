@@ -29,7 +29,7 @@ class InstrumentsController < ApplicationController
 
     if @instrument.save
       # No need for app/views/instruments/create.html.erb
-      redirect_to instruments_path
+      redirect_to listings_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -47,7 +47,7 @@ class InstrumentsController < ApplicationController
   def destroy
     @instrument = Instrument.find(params[:id])
     @instrument.destroy
-    redirect_to profile_path, status: :see_other
+    redirect_to listings_path, status: :see_other
   end
 
   private
