@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require "faker"
+require "date"
 
 puts "Cleaning Database..."
 Booking.destroy_all
@@ -53,7 +54,10 @@ puts "Creating Instruments..."
       condition: conditions.sample,
       description: descriptions.sample,
       address: Faker::Address.street_address + ", London, " + Faker::Address.postcode,
-      user: user1
+      user: user1,
+      price_per_day: rand(5..15),
+      available_from: Date.new(2024, 11, 23),
+      available_until: Date.new(2024, 11, 28)
     )
     file = URI.parse(i[:image_url].sample).open
     instrument.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
