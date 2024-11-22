@@ -59,7 +59,7 @@ puts "Creating Instruments..."
     instrument.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
     instrument.save!
-    puts "#{i.title} created!"
+    puts "#{i[:name]} created!"
   end
 end
 
