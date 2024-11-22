@@ -1,5 +1,5 @@
 
-<h3>Listings:</h3>
+<h3 class="m-4">Listings:</h3>
 <ul class="list-unstyled">
   <div>
     <% @instruments.each do |instrument| %>
@@ -11,7 +11,7 @@
                 <p><%= link_to instrument.title, instrument_path(instrument), id: "orange" %></p>
                 <p><%= instrument.condition%></p>
               </div>
-              <div style="background-color:gray; border-radius:5px; height: fit-content" class="px-2 py-1" >
+              <div style="background-color:gray; color:white; border-radius:5px; height: fit-content" class="px-2 py-1" >
                 <span>£
                 <%= instrument.price_per_day%>
                 .00</span>
@@ -31,7 +31,7 @@
             </div>
         </div>
       </div>
-          </li>
+      </li>
     <% end %>
   </div>
 </ul>

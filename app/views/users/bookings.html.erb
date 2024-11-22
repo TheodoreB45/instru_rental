@@ -1,15 +1,24 @@
+<h3 class="m-4">Bookings:</h3>
 <div class="d-flex justify-content-between">
-  <div>
-    <h3>Bookings:</h3>
-    <ul class="list-unstyled m-3 p-">
+  <div >
       <% @bookings.each do | booking | %>
-        <li><%= booking.instrument.title %></li>
-        <li><%= booking.start_date %></li>
-        <li><%= booking.end_date %></li>
-        <%= link_to "Delete", booking_path(booking), data: {
-          turbo_method: :delete,
-            turbo_confirm: "Are you sure?" } %>
+      <div class="m-4 card" style="width: 36rem;">
+        <div class="card-body">
+        <p><%= link_to booking.instrument.title, instrument_path(booking.instrument), id: "orange"  %></p>
+          <p>Dates booked for:
+                <%= booking.start_date %>
+                -
+                <%= booking.end_date %>
+          </p>
+            <div class="d-flex">
+              <div style="background-color:black; border-radius:15px; height: fit-content;" class="px-2 py-1">
+                <%= link_to "Cancel", booking_path(booking), class: "btn-delete-white", data: {
+                  turbo_method: :delete,
+                    turbo_confirm: "Are you sure?" } %>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
-    </ul>
-  <div>
+    <div>
 </div>
