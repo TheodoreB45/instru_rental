@@ -1,16 +1,18 @@
-<h1>List an instrument</h1>
-<%= simple_form_for(@instrument) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :condition %>
-  <%= f.input :address %>
-  <%= f.input :price_per_day %>
-  <%= f.input :photo, as: :file %>
-    <%= f.input :available_from,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :available_until,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.submit "List an instrument", class: "btn btn-primary" %>
-<% end %>
+<div class="p-3">
+  <h1>List an instrument</h1>
+  <%= simple_form_for(@instrument) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :condition %>
+    <%= f.input :address %>
+    <%= f.input :price_per_day %>
+    <%= f.input :photo, as: :file %>
+      <%= f.input :available_from,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+    <%= f.input :available_until,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+    <%= f.submit "List", class: "list-button" %>
+  <% end %>
+</div>
