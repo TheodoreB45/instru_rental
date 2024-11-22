@@ -1,6 +1,6 @@
 <div class="container mx-2">
   <h1>Description</h1>
-    <%= cl_image_tag @instrument.photo.key if @instrument.photo.attached? %>
+    <%= cl_image_tag  @instrument.photo.key , class: "show-img" if @instrument.photo.attached? %>
     <div class="card border-0" style="width: 50%;">
       <ul class="list-unstyled">
         <h4 class="pt-3">Title:</h4>
