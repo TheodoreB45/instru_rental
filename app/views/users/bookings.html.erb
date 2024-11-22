@@ -2,7 +2,7 @@
 <div class="d-flex justify-content-between">
   <div >
       <% @bookings.each do | booking | %>
-      <div class="m-4 card" style="width: 36rem;">
+      <div class="m-4 card grid-item" style="width: 36rem;">
         <div class="card-body">
         <p><%= link_to booking.instrument.title, instrument_path(booking.instrument), id: "orange"  %></p>
           <p>Dates booked for:
