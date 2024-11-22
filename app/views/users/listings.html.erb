@@ -1,11 +1,37 @@
-<div>
-    <h3>Listings:</h3>
-    <ul class="list-unstyled">
-      <% @instruments.each do |instrument| %>
-        <li><%= link_to instrument.title, instrument_path(instrument) %>
-        <%= link_to "Delete", instrument_path(instrument), data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?" } %></li>
-      <% end %>
-    </ul>
+
+<h3>Listings:</h3>
+<ul class="list-unstyled">
   <div>
+    <% @instruments.each do |instrument| %>
+          <li>
+      <div class="m-4 card" style="width: 36rem;">
+        <div class="card-body">
+            <div class= "d-flex justify-content-between" >
+              <div>
+                <p><%= link_to instrument.title, instrument_path(instrument), id: "orange" %></p>
+                <p><%= instrument.condition%></p>
+              </div>
+              <div style="background-color:gray; border-radius:5px; height: fit-content" class="px-2 py-1" >
+                <span>£
+                <%= instrument.price_per_day%>
+                .00</span>
+              </div>
+            </div>
+            <div class= " d-flex justify-content-between" style= "padding-top:18px">
+              <p>availability:
+              <%= instrument.available_from%>
+              -
+              <%= instrument.available_until%>
+              </p>
+              <div style="background-color:black; border-radius:15px; height: fit-content;" class="px-2 py-1">
+                <%= link_to "Delete", instrument_path(instrument), class: "btn-delete-white", data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?" } %>
+              </div>
+            </div>
+        </div>
+      </div>
+          </li>
+    <% end %>
+  </div>
+</ul>
