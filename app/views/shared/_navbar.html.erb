@@ -7,30 +7,23 @@
       </div>
     <% end %>
 
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="search-bar">
-      <%= form_with url: instruments_path, method: :get, local: true do %>
-        <%= text_field_tag :query, params[:query], placeholder: "Search...", class: "search-input" %>
-        <%# <button type="submit" class="search-button"></button> %>
-      <% end %>
-    </div>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://static.vecteezy.com/system/resources/previews/007/409/974/non_2x/people-icon-design-avatar-icon-person-icons-people-icons-are-set-in-trendy-line-style-user-icon-set-vector.jpg", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile", "/profile", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
+          <div class="pill">
+            <li class="nav-item dropdown">
+            <a href="instruments" alt="dropdown-menu"><i class="fas fa-home"></i></a>
+            <a href="/profile" alt="dropdown-menu"><i class="fas fa-user"></i></a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Profile", "/profile", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+          </div>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
