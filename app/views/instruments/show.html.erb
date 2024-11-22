@@ -20,6 +20,8 @@
   </ul>
 </div>
 
+<%= cl_image_tag @instrument.photo.key if @instrument.photo.attached? %>
+
 <div>
   <h5>Book this instrument:</h5>
     <%= simple_form_for [@instrument, @booking] do |f| %>
