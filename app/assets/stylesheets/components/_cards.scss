@@ -1,0 +1,23 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 16px; /* Optional padding for inner spacing */
+}
+
+.grid-item {
+  background-color: #f4f4f4; /* Light background for visibility */
+  border: 1px solid #ddd; /* Border around items */
+  border-radius: 8px;
+  width: auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust column sizes */
+  }
+}

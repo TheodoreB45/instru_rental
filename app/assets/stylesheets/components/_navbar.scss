@@ -8,7 +8,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 30px;
 }
 
 .navbar {
@@ -26,66 +26,89 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ff8c00;
+  color: #FF9F1C;
+  font-family: "Pacifico";
 }
 
 .logo-icon {
-  font-size: 1.5rem;
   margin-right: 5px;
 }
 
-.navbar-search {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
+.pill {
+  width: 100px;
+  height: 50px;
+  background-color: #D7AB6F;
+  border-radius: 24px;
 }
 
-.search-input {
-  width: 60%;
-  padding: 10px 15px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 1rem;
-  outline: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s ease;
-}
-
-.search-input:focus {
-  border-color: #ff8c00;
-}
-
-.search-button {
+.fa-home {
+  color: white;
+  transition: background-color 0.3s ease;
   position: absolute;
-  right: calc(20% + 10px); /* Adjusts button inside the input */
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #333;
+  top: 17px;
+  left: 20px;
 }
 
-.navbar-icons {
-  display: flex;
-  gap: 15px;
+.fa-home:hover {
+  color: #888888;
 }
 
-.icon-button {
-  background-color: #d4a267;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 15px;
-  font-size: 1.2rem;
-  color: #fff;
+.fa-user {
+  color: white;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 17px;
+  left: 60px;
+}
+
+.fa-user:hover {
+  color: #888888;
+}
+
+.search-bar-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  gap: 10px;
+  padding: 5px;
 }
 
-.icon-button:hover {
-  background-color: #b48d4a;
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 50px;
+  padding: 5px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  flex: 1;
+}
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: transparent;
+  padding: 10px 0;
+}
+.search-button {
+  background-color: transparent;
+  border: none;
+  color: #555;
+  font-size: 18px;
+  cursor: pointer;
+}
+.list-button {
+  background-color: #FF9F1C;
+  text-decoration: none;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.list-button:hover {
+  background-color: #D7AB6F;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
