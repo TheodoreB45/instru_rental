@@ -1,7 +1,7 @@
 
-<ul>
-  <li><%= link_to "Your listings", listings_path%></li>
-  <li><%= link_to "Your bookings", bookings_path%></li>
-</ul>
+<div>
+  <p><strong><%= link_to "Your listings", listings_path, class: "m-4", id: "orange" %></strong></p>
+  <p><strong><%= link_to "Your bookings", bookings_path, class: "m-4", id: "orange" %></strong></p>
+</div>
 
-<%= link_to "List New instrument", new_instrument_path  %>
+
