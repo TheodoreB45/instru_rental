@@ -52,3 +52,18 @@ puts "Creating Instruments..."
 end
 
 puts "Instrument Created: #{Instrument.count}"
+
+
+puts "Creating Bookings"
+
+10.times do
+
+  booking = Booking.new(
+    user: User.all.sample,
+    instrument: Instrument.all.sample,
+    start_date: "Mon, 25 Nov 2024",
+    end_date: "Wed, 27 Nov 2024"
+  )
+    booking.save!
+end
+puts "Bookings Created..."
