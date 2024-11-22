@@ -1,14 +1,6 @@
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3 search-bar">
-    <%= form_with url: instruments_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query, params[:query], class: "search-input", placeholder: "Search an instrument..." %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
-<div class="d-flex">
+<div class="grid-container">
   <% @instruments.each do |instrument| %>
-    <div class="m-4 card" style="width: 18rem;">
+    <div class="card grid-item">
       <div class="card-body">
         <h5><%= link_to instrument.title, instrument_path(instrument), class: "card-title" %></h5>
         <%= cl_image_tag instrument.photo.key if instrument.photo.attached? %>
